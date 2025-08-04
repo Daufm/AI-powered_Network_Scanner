@@ -110,12 +110,19 @@ with open(args.out, "w") as f:
         """
 
         f.write(report)
-
-    else:
+    elif args.out.endswith == ".txt":
         f.write(f"Target: {args.target}\n")
         f.write(f"Ports: {args.ports}\n")
         f.write(f"Profile: {args.profile}\n")
         f.write(f"Scan Summary:\n{scan_summary}\n")
         f.write(f"AI Advice:\n{advice}\n")
+
+    else:
+        # Display only the scan summary on CLI, not the AI analysis
+        print(f"Target: {args.target}")
+        print(f"Ports: {args.ports}")
+        print(f"Profile: {args.profile}")
+        print("Scan Summary:")
+        print(scan_summary)
 
 print(f"[+] Full report written to {args.out}\n")
