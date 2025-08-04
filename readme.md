@@ -120,3 +120,43 @@ python scanner.py 10.0.0.1 --profile full --out results.md
 This project is licensed under the **MIT License**. See [LICENSE](LICENSE) for details.
 
 ---
+
+Absolutely — here's a **nicely formatted section** you can add to your README to explain the importance of using `venv` and `$(which python3)` for smoother scanning and avoiding permission issues:
+
+---
+
+
+## ⚠️ Tips for Running the Scanner Smoothly
+
+### ✅ Use a Virtual Environment (`venv`)
+
+To avoid dependency conflicts and keep your Python environment clean:
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
+This ensures you're using the right versions of the required packages (like `python-nmap`, `openai`, etc.).
+
+---
+
+### 🛠️ Use `$(which python3)` for Scanning (Especially with `sudo`)
+
+Some scan types (like SYN scans) require root access. If you run the scanner with `sudo`, your virtual environment may not be respected unless you use:
+
+```bash
+sudo $(which python3) scanner.py 192.168.1.7 --out report.md
+```
+
+Why this works:
+
+* `$(which python3)` resolves the full path to your Python binary (including the virtual environment one).
+* It prevents errors like:
+
+  * `ModuleNotFoundError: No module named 'nmap'`
+  * Nmap scan failures due to missing privileges
+
+---
+
