@@ -119,9 +119,8 @@ python scanner.py 10.0.0.1 --profile full --out results.md
 
 This project is licensed under the **MIT License**. See [LICENSE](LICENSE) for details.
 
----
 
-Absolutely — here's a **nicely formatted section** you can add to your README to explain the importance of using `venv` and `$(which python3)` for smoother scanning and avoiding permission issues:
+
 
 ---
 
