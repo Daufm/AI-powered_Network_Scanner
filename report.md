@@ -1,5 +1,5 @@
 # AI-Powered Scan Report
-        ## Scan parameters
+     ## Scan parameters
         * Target: `192.168.1.7`
         * Ports : `1-1024`
         * Profile: `fast`
